@@ -110,7 +110,7 @@ server <- function(input, output) {
     if(input$show.primary==T){
       main.plot=
         main.plot +
-        geom_line(data=melted.df[melted.df$category=="report_pain",],aes(x=time,y=value,color=category),size=2,alpha=0.9,col="black")
+        geom_line(data=melted.df[melted.df$category=="report_pain",],aes(x=time,y=value,color=category),size=2,alpha=0.9,col="purple")
     }
     
     if(input$show.adherence==T){
