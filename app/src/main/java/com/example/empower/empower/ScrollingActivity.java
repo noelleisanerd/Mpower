@@ -1,5 +1,6 @@
 package com.example.empower.empower;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -10,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -20,6 +22,7 @@ import java.util.Calendar;
 import java.util.List;
 
 public class ScrollingActivity extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,9 +40,9 @@ public class ScrollingActivity extends AppCompatActivity {
             }
         });
 
-        LinearLayout linear = findViewById(R.id.linear);
+        final LinearLayout linear = findViewById(R.id.linear);
 
-        LinearLayout.LayoutParams param = new LinearLayout.LayoutParams(
+        final LinearLayout.LayoutParams param = new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.MATCH_PARENT, 1.0f);
 
@@ -146,15 +149,141 @@ public class ScrollingActivity extends AppCompatActivity {
 
                 if(dates.get(0) <= year && dates.get(1) <= month && dates.get(2) <= day && !done) {
                     //MAKE A BUTTON
-                    Button temp = new Button(getApplicationContext());
+                    int index = 0;
+                        ++index;
+
+
+
+
+
+
+
+                        switch(category){
+
+                            case "sleep":
+
+                                final TextView sleep = new TextView(getApplicationContext());
+                                sleep.setLayoutParams(param);
+                                sleep.setTextSize(32);
+                                sleep.setText("Have you taken your medication?");
+                                sleep.setTextColor(Color.BLACK);
+                                linear.addView(sleep, param);
+
+                                Button temp = new Button(getApplicationContext());
+                                temp.setText("You slept well!");
+                                temp.setTextSize(28);
+                                temp.setLayoutParams(param);
+                                btn.add(temp);
+                                linear.addView(temp, param);
+                                temp.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        Button b = (Button) view;
+                                        b.setVisibility(View.GONE);
+                                        System.out.println("You slept well!");
+                                        sleep.setVisibility(View.GONE);
+                                    }
+
+
+                                });
+
+                                break;
+
+                            case "take_med":
+
+                                final TextView take_med = new TextView(getApplicationContext());
+                                take_med.setLayoutParams(param);
+                                take_med.setTextSize(32);
+                                take_med.setText("Have you taken your medication?");
+                                take_med.setTextColor(Color.BLACK);
+                                linear.addView(take_med, param);
+
+                                Button tempa = new Button(getApplicationContext());
+                                tempa.setText(category);
+                                tempa.setLayoutParams(param);
+                                btn.add(tempa);
+                                linear.addView(tempa, param);
+                                tempa.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        Button b = (Button) view;
+                                        b.setVisibility(View.GONE);
+                                        System.out.println("MEDS");
+                                        take_med.setVisibility(View.GONE);
+                                    }
+
+
+                                });
+
+                                break;
+
+                            case "exercise":
+
+                                TextView exercise = new TextView(getApplicationContext());
+                                exercise.setLayoutParams(param);
+                                exercise.setTextSize(32);
+                                exercise.setText("Have you completed exercise?");
+                                exercise.setTextColor(Color.BLACK);
+                                linear.addView(exercise, param);
+
+                                Button tempb = new Button(getApplicationContext());
+                                tempb.setText(category);
+                                tempb.setLayoutParams(param);
+                                btn.add(tempb);
+                                linear.addView(tempb, param);
+
+                                break;
+
+                            case "report_pain":
+
+                                TextView report_pain = new TextView(getApplicationContext());
+                                report_pain.setLayoutParams(param);
+                                report_pain.setTextSize(32);
+                                report_pain.setText("Do you have any pain?");
+                                report_pain.setTextColor(Color.BLACK);
+                                linear.addView(report_pain, param);
+
+                                Button tempc = new Button(getApplicationContext());
+                                tempc.setText(category);
+                                tempc.setLayoutParams(param);
+                                btn.add(tempc);
+                                linear.addView(tempc, param);
+
+                                break;
+
+                            case "report_wellbeing":
+
+                                TextView report_wellbeing = new TextView(getApplicationContext());
+                                report_wellbeing.setLayoutParams(param);
+                                report_wellbeing.setTextSize(32);
+                                report_wellbeing.setText("How is your overall wellbeing?");
+                                report_wellbeing.setTextColor(Color.BLACK);
+                                linear.addView(report_wellbeing, param);
+
+                                Button tempd = new Button(getApplicationContext());
+                                tempd.setText(category);
+                                tempd.setLayoutParams(param);
+
+                                btn.add(tempd);
+                                linear.addView(tempd, param);
+
+                                break;
+
+
+
+                        }
+
+
+/*                    Button temp = new Button(getApplicationContext());
                     temp.setText(category);
                     temp.setLayoutParams(param);
                     btn.add(temp);
-
-                    linear.addView(temp, param);
+                    linear.addView(temp, param);*/
                     //ADD TO ID
                     idList.add(id);
                 }
+
+
 
             }
         } catch(Exception err) {
@@ -164,11 +293,29 @@ public class ScrollingActivity extends AppCompatActivity {
 
     }
 
-    View.OnClickListener handleOnClick(final Button button) {
+/*    View.OnClickListener handleOnClick(final Button button) {
         return new View.OnClickListener() {
             public void onClick(View v) {
+                        TextView sleep = new TextView(getApplicationContext());
+                        sleep.setTextSize(22);
+                        sleep.setText("You've slept well today!");
+                        sleep.setTextColor(Color.BLACK);
             }
+
         };
+    }*/
+
+    void handleOnClick(final Button button) {
+       button.setOnClickListener(new View.OnClickListener(){
+           @Override
+            public void onClick(View v) {
+                TextView sleep = new TextView(getApplicationContext());
+                sleep.setTextSize(22);
+                sleep.setText("You've slept well today!");
+                sleep.setTextColor(Color.BLACK);
+            }
+
+        });
     }
 
     @Override
