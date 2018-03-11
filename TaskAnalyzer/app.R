@@ -37,7 +37,7 @@ ui <- fluidPage(
              ".shiny-output-error:before { visibility: hidden; }"),
   
   fluidRow(
-    navbarPage(" Mpower ----> ",
+    navbarPage(" M_power Analyzer",
                
                tabPanel("Overview",
                         sidebarPanel(
@@ -68,7 +68,7 @@ ui <- fluidPage(
                         mainPanel(plotOutput("pft.plot"))),
                
                
-               tabPanel("place-holder: Upload your data",
+               tabPanel("Link data",
                         sidebarPanel(
                           fileInput("file1", "Choose CSV File",
                                     multiple = TRUE,

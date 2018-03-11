@@ -4,7 +4,7 @@
 library(shiny)
 
 ui <- fluidPage(
-  pageWithSidebar(headerPanel("Adding entries to table"),
+  pageWithSidebar(headerPanel("M_power Planner"),
                   sidebarPanel(textInput("text1", "Start in week"),
                                textInput("text2", "End after week"),
                                selectInput("whichday", "on which days?", 
@@ -28,7 +28,11 @@ ui <- fluidPage(
                                
                                
                                actionButton("do", "Update Table"),
+                               br(),br(),
                                downloadButton("downloadData", "Download"),
+                               br(),
+                               downloadButton("pushData", "Push to Github"),
+                               
                                br(),
                                br(),
                                br(),
@@ -90,7 +94,8 @@ server <- function(input, output,session) {
   
   output$table1 <- renderTable({values$df})
   
-  output$downloadData <- downloadHandler(
+  
+  output$pushData <- downloadHandler(
     
     filename = "MpowerTasks.csv",
     content = function(file) {
@@ -99,6 +104,15 @@ server <- function(input, output,session) {
       system("git add /users/waqr/desktop/Mpower/TaskCreator/MpowerTasks.csv")
       system('git commit -m "commit MpowerTask.csv"')
       system("git push")
+      
+    }
+  )
+  
+  output$downloadData <- downloadHandler(
+    
+    filename = "MpowerTasks.csv",
+    content = function(file) {
+      write.csv(values$df, file, row.names = FALSE)
       
     }
   )
