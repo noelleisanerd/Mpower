@@ -194,7 +194,8 @@
                 android:fillViewport="false"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/appbar">
+                app:layout_constraintTop_toBottomOf="@+id/appbar"
+                tools:ignore="NotSibling">
 
             </android.support.v4.widget.NestedScrollView>
 
