@@ -99,7 +99,7 @@ server <- function(input, output) {
       geom_line(alpha=0.3) +
       geom_line(size=1.5) +
       xlim((input$zoom[1]),(input$zoom[2])) +
-      ylab("Change (SD)") +
+      ylab("Level") +
       xlab("Date") +
       scale_colour_manual("Legend", values = unique(df.selection$color)) +
       theme(legend.position = "top",
