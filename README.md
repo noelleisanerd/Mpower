@@ -28,13 +28,13 @@ Someone shoudl explain what this is about...
 
 ## __M_power Flow__
 
-  * Define problem(s):  Management of chronic pain
-  * Primary objective: Reduced levels of pain
-  * Secondary objectives: Improve well-being, improve sleep, more activity
-  * Measurement instruments: e.g. Numeric scales, hours of sleep, etc.
-  * Plan interventions: 1. Opioids (2 weeks), 2. Amitriptyline (2 weeks), Physiotherapy (2 weeks)
-  * Do
-  * Evaluate
+  1. Define problem(s):  Management of chronic pain
+  2. Primary objective: Reduced levels of pain
+  3. Secondary objectives: Improve well-being, improve sleep, more activity
+  4. Measurement instruments: e.g. Numeric scales, hours of sleep, etc.
+  5. Plan interventions: 1. Opioids (2 weeks), 2. Amitriptyline (2 weeks), Physiotherapy (2 weeks)
+  6. Do
+  7. Evaluate
   
 <br><br>
 ****
