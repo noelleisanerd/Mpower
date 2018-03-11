@@ -99,6 +99,7 @@ server <- function(input, output,session) {
     
     filename = "MpowerTasks.csv",
     content = function(file) {
+      values$df = values$df[,-1]
       write.csv(values$df, "MpowerTasks.csv", row.names = FALSE)
       
       system("git add /users/waqr/desktop/Mpower/TaskCreator/MpowerTasks.csv")
@@ -112,6 +113,7 @@ server <- function(input, output,session) {
     
     filename = "MpowerTasks.csv",
     content = function(file) {
+      values$df = values$df[,-1]
       write.csv(values$df, file, row.names = FALSE)
       
     }
