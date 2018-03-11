@@ -8,6 +8,24 @@ Someone shoudl explain what this is about...
 ****
 <br><br>
 
+
+## __The future of health care__
+
+* Person-centered: Focusing on patient’s preferences
+
+* Prolonged: Best level of ‘management’ for chronic care 
+
+* Personalized: Requires new types of trials and evidence
+
+* Patient-led: Empowering patients to own their health
+
+
+<br><br>
+****
+<br><br>
+
+
+
 ## __M_power Flow__
 
   * Define problem(s):  Management of chronic pain
@@ -17,10 +35,12 @@ Someone shoudl explain what this is about...
   * Plan interventions: 1. Opioids (2 weeks), 2. Amitriptyline (2 weeks), Physiotherapy (2 weeks)
   * Do
   * Evaluate
+  
 <br><br>
 ****
 <br><br>
-## Pieces
+
+## Pieces of R-code
 
 ### Set up a treatment plan
 ```
@@ -45,7 +65,7 @@ eval(parse(text = M_power_analyze))
 
 ; )
 
-
+<br><br><br><br>
 
 
 ![alt text](https://github.com/noelleisanerd/Mpower/raw/master/dcfc76fc31d70ed84c379fa2737204f4.jpg "23")
